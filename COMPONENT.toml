@@ -1,0 +1,6 @@
+[component]
+name = "SigmaOS-tte-go"
+tier = 4
+description = "Terminal text visual effects, matrix animations, and fire displays engine"
+contracts = ['terminal-visual-effects', 'ascii-matrix-animator', 'color-cycle-engine']
+upstream_inspirations = ['https://github.com/omacom/tte-go']

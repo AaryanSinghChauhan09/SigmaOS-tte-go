@@ -1,11 +1,24 @@
-//! SigmaOS-tte-go — Terminal text effects engine in Go for SigmaOS
-//!
-//! Part of the SigmaOS multi-repository ecosystem.
-//! See https://github.com/AaryanSinghChauhan09/SigmaOS for details.
+pub struct TerminalEffects;
 
-#![allow(dead_code)]
+impl TerminalEffects {
+    pub fn colorize_rainbow(text: &str) -> String {
+        format!("[35m{}[0m", text)
+    }
+    pub fn banner(text: &str) -> String {
+        format!("=== {} ===", text)
+    }
+}
 
-/// Module entry point for SigmaOS-tte-go
-pub fn version() -> &'static str {
-    env!("CARGO_PKG_VERSION")
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_terminal_effects_aaa() {
+        // Arrange
+        let input = "SigmaOS";
+        // Act
+        let banner = TerminalEffects::banner(input);
+        // Assert
+        assert_eq!(banner, "=== SigmaOS ===");
+    }
 }
